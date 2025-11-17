@@ -6,7 +6,7 @@ namespace uart {
 
   void init()
   {
-    UBRR0 = 0; 
+    UBRR0 = 207; 
     //UDR0
     UCSR0C &= (0 << UMSEL00) & (0<<UMSEL01);
     UCSR0C |= (1<< UPM00) | (1<< UPM01);
@@ -14,7 +14,7 @@ namespace uart {
     UBRR0L = 0b11001111; //set ubbr0l to 207 - ATMega hat frequenz 16Mhz - Baudrate dadurch 9600
     
     UCSR0B = (1<<RXEN0)|(1<<TXEN0);
-    UBRR0 = 9600;
+    //UBRR0 = 9600;
   }
 
 
